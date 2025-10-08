@@ -12,11 +12,10 @@ namespace StockService.Core.Domain.Entities.Inventory
     {
         public string Description { get; set; } = null!;
         public int Quantity { get; set; }
-        public int OnHand { get; set; }
-        public int Reserved { get; set; }
-        public int Available => OnHand - Reserved;
+        public decimal PurchasePrice { get; set; }
+        public decimal RetailPrice { get; set; }
         public int MinLevel { get; set; }
-        public int Ordered { get; set; }
+        public int OrderedQty { get; set; }
 
         public Guid LocationId { get; set; }
         public Location? Location { get; set; }
